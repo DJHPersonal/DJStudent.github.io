@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Deep Q-Networks</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+				<video autoplay playsinline muted loop src="../Videos/PortfolioBackgroundVid.mp4" id="bckVideo" class="lazy" type="video/mp4"></video>
+
+				<!-- Header -->
+				<header id="header">
+					<h1><a href="../index.html">David Hestelow</a></h1>
+					<nav>
+						<a id="header-button"href="../index.html#one">About Me</a>
+						<a id="header-button" href="../index.html#four">Student Projects</a>
+						<a id="header-button" href="#footer">Contact</a>
+						<a href="#menu">Menu</a>
+					</nav>
+				</header>
+						<!-- Menu -->
+						<nav id="menu">
+							<div class="inner">
+								<h2>Menu</h2>
+								<ul class="links">
+									<li><a id="header-button"href="../index.html#one">About Me</a></li>
+									<li><a id="header-button" href="../index.html#four">Student Projects</a></li>
+									<a id="header-button" href="#footer">Contact</a>
+								</ul>
+								<a href="#" class="close">Close</a>
+							</div>
+						</nav>
+			
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Deep Quality Networks</h2>
+								<span id="overview-text" style="background-color: #1F263D;">Python</span>
+								<span id="overview-text" style="background-color: #2C3557;">Completely from Scratch</span>
+								<span id="overview-text" style="background-color: #4C5C96;">Q-Learning</span>
+								<span id="overview-text" style="background-color: #4C5C96;">Deep Q-Learning</span>
+								<span id="overview-text" style="background-color: #748CE3;">Individual</span>
+									<div style="margin: auto; margin-top: 4em; display: flex; width: 70%;">
+										<a href="https://colab.research.google.com/drive/1vO5lYitgmvcktTY_MtdnNLxRqYZGu2sz?usp=sharing" target="_blank" class="special">DQN Code on Google Colab</a>
+										<a href="https://colab.research.google.com/drive/1LTcCEGNFh2_kBBzLHOlsP7zCjsNRIqvz?usp=sharing" target="_blank" class="special" style="margin-left: 2em;">Q-Learning Code on Google Colab</a>
+									</div>	
+								<!-- <p>Collect fuel and evade zombies in this LAN multiplayer, random island generation tech demo.</p> -->
+							</div>
+						</header>
+
+						<!-- Content -->
+						<div id="about">
+							<div class="wrapper">
+								<div class="inner">
+									<div class = "projectOverviews">
+										<video preload="metadata" poster="../images/ReinforcementLearning/PageImagev2.jpg">
+										</video>	
+										<h3 class="major">Things to Highlight</h3>
+										<ul>
+											<li>Q-Learning from Scratch</li>
+											<li>Multi-Layered Perceptron Deep Neural Network from Scratch</li>
+											<li>Used OpenAI Gyms Environments</li>
+										</ul>
+									</div>
+									<p>Made as a final-year project with the overall goal of developing an in depth understanding of how reinforcement 
+										learning works so that I will be able to use this technique on future AI related projects where standard methods are 
+										not applicable. While the assessment had finished, some issues remained in the project and so some time had to be spent fixing them all.</p>
+									
+									<h3 class="major">Q-Learning</h3>
+									<p>In order to be able to fully understand how reinforcement learning works as simply and easily as possible, one of the simplest algorithms, Quality Learning was implemented. 
+										As designed to solve simple sequential problems it was largely tested with OpenAI Gym’s <b>taxi environment</b> along with some 
+										initial testing on the even simpler <b>cliff walking environment</b>.
+									</p>
+									<p>
+										While the algorithm itself was easy to implement, understanding how it all worked, especially the influence different values 
+										of each individual hyperparameter, especially gamma, has along with the temporal difference component of the Q-function.
+										</p>
+									<p>
+										See below the training and testing videos:	
+									</p>
+									<div class="row gtr-uniform" style="margin-top: 2em;">
+										<div class="col-5">
+											<span class="image fit"><video class="img" autoplay playsinline muted loop
+												src="../Videos/ReinforcementLearning/Q_Learning_training_video.mp4"></video></span>
+											<p class="imginfo">Training Video</p>
+										</div>
+										
+										<div class="col-5">
+											<span class="image fit"><video class="img" autoplay playsinline muted loop
+												src="../Videos/ReinforcementLearning/Q_Learning_validation_video.mp4"></video></span>
+											<p class="imginfo">Validation Video</p>
+										</div>
+									</div>
+									
+									<h3 class="major" style="padding-top: 50px;">Deep Q-Learning</h3>
+									<p>
+									To further my understanding of reinforcement learning, and to really challenge myself, a more complex algorithm, Deep Q-Networks, 
+									was implemented. As it’s designed to solve more complex sequential problems, ones that have a discrete action space and a continuous state space, 
+									it was largely tested with OpenAI Gym’s <b>Luna Lander environment</b>. </p>
+
+									<p>Unlike Q-Learning, the use of a multi-layered perceptron neural network, replay buffer and target network within the 
+										algorithm made its implementation a lot more difficult. As well the additional hyper-parameters, such as the 
+										<b>replay buffer size</b> and <b>target network update rate</b> required further analysis and fine tuning to ensure 
+										issues such as catastrophic forgetting were not occurring.</p>
+									<p>
+										This was a key issue as on multiple occasions I would see issues that looked like catastrophic 
+										forgetting, tweaking the parameters and waiting hours for the re-training only to eventually find the issue being some bug 
+										in my implementation, such as the <b>backpropagation</b> being incorrectly setup, the <b>Mean Squared 
+											Error Loss</b> having the target and predicted values around the wrong way or even the 
+											<b>matrices</b> having the rows and columns flipped. 
+									</p>
+
+									<p>
+										See below the training and testing videos:	
+									</p>
+									<div class="row gtr-uniform" style="margin-top: 2em;">
+										<div class="col-5">
+											<span class="image fit"><video class="img" autoplay playsinline muted loop
+												src="../Videos/ReinforcementLearning/DQN_Training_Video.mp4"></video></span>
+											<p class="imginfo">Training Video</p>
+										</div>
+										
+										<div class="col-5">
+											<span class="image fit"><video class="img" autoplay playsinline muted loop
+												src="../Videos/ReinforcementLearning/DQN_Validation_Video.mp4"></video></span>
+											<p class="imginfo">Validation Video</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</section>
+
+				<!-- Footer style="display: inline !important;"style="margin-left: 2em; display: inline !important;"-->
+				<section id="footer">
+					<div class="inner">
+						<h2 class="major">Get in touch</h2>
+						<!-- <p></p>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" />
+								</div>
+								<div class="field">
+									<label for="email">Email</label>
+									<input type="email" name="email" id="email" />
+								</div>
+								<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="4"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send Message" /></li>
+							</ul>
+						</form> -->
+						<ul class="contact">
+							<li class="icon solid fa-phone">(+61) 0419260344</li>
+							<li class="icon solid fa-envelope"><a href="mailto:djhestelow@gmail.com">djhestelow@gmail.com</a></li>
+							<li class="icon brands fa-linkedin"><a href="https://au.linkedin.com/in/david-hestelow-804aa7239">LinkedIn</a></li>
+							<li class="icon brands fa-twitter"><a href="https://twitter.com/DJHestelow">Twitter</a></li>
+								<!-- <li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
+							<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
+							<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li> -->
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</section>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
